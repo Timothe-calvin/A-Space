@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Space Bot</title>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        function toggleCommands(cardId) {
+            const commandList = document.getElementById(cardId + "-commands");
+            const allCommandLists = document.getElementsByClassName("command-list-expanded");
+
+            // Hide all other command lists
+            for (let list of allCommandLists) {
+                if (list.id !== cardId + "-commands") {
+                    list.style.display = "none";
+                }
+            }
+
+            // Toggle the clicked card's command list
+            if (commandList) {
+                commandList.style.display = commandList.style.display === "none" ? "block" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <a href="/">A Space Bot</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Commands.html">Commands</a></li>
+                    <li><a href="/termsOfService.html">Terms</a></li>
+                    <li><a href="/privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </header>
+
+            <main>
+                <section class="hero">
+                    <h1>A Space Bot</h1>
+                    <p class="lead">Your Discord server's versatile companion</p>
+                    
+                    </div>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1342743661070254253&scope=bot&permissions=8" class="btn-primary">Add to Discord</a>
+                </section>
+
+                <section class="features" id="features">
+                    <h2>Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card" onclick="toggleCommands('moderation')" id="moderation">
+                            <h3>🛡️ Moderation</h3>
+                            <p>Keep your server safe with powerful moderation tools</p>
+                            <div id="moderation-commands" class="command-list-expanded" style="display: none;">
+                                <code>!kick [user]</code>
+                                <p>Remove a user from the server</p>
+                                <code>!ban [user]</code>
+                                <p>Permanently ban a user</p>
+                                <code>!timeout [user] [duration]</code>
+                                <p>Temporarily timeout a user</p>
+                                <code>!purge [amount]</code>
+                                <p>Delete multiple messages at once</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" onclick="toggleCommands('voice')" id="voice">
+                            <h3>🎤 Voice Controls</h3>
+                            <p>Manage voice channels and user interactions</p>
+                            <div id="voice-commands" class="command-list-expanded" style="display: none;">
+                                <code>!join</code>
+                                <p>Join your voice channel</p>
+                                <code>!leave</code>
+                                <p>Leave the voice channel</p>
+                                <code>!voicemove [user] [channel]</code>
+                                <p>Move a user to another voice channel</p>
+                                <code>!voicekick [user]</code>
+                                <p>Disconnect a user from voice</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" onclick="toggleCommands('bible')" id="bible">
+                            <h3>📖 Bible Commands</h3>
+                            <p>Access scripture and daily devotionals</p>
+                            <div id="bible-commands" class="command-list-expanded" style="display: none;">
+                                <code>!verse</code>
+                                <p>Get a random Bible verse</p>
+                                <code>!dailyverse</code>
+                                <p>Get the verse of the day</p>
+                                <code>!search [term]</code>
+                                <p>Search the Bible</p>
+                                <code>!proverb</code>
+                                <p>Get a random proverb</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" onclick="toggleCommands('ai')" id="ai">
+                            <h3>🤖 AI Chat</h3>
+                            <p>Engage with AI-powered conversations</p>
+                            <div id="ai-commands" class="command-list-expanded" style="display: none;">
+                                <code>!chat [message]</code>
+                                <p>Chat with the AI assistant</p>
+                            </div>
+                        </div>
+                        <div class="feature-card" onclick="toggleCommands('fun')" id="fun">
+                            <h3>🎮 Fun Commands</h3>
+                            <p>Engage your community with fun activities</p>
+                            <div id="fun-commands" class="command-list-expanded" style="display: none;">
+                                <code>!8ball [question]</code>
+                                <p>Ask the magic 8-ball</p>
+                                <code>!unscramble</code>
+                                <p>Play word unscramble game</p>
+                                <code>!coinflip</code>
+                                <p>Flip a coin</p>
+                                <code>!roll [max]</code>
+                                <p>Roll a random number</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <?php
+        }
+        ?>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>A Space Bot. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
